@@ -41,6 +41,12 @@
                     class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                     required>
             </div>
+            {{-- <div>
+                <label for="image" class="block text-sm font-medium text-gray-700">Image</label>
+                <input type="text" name="image" id="image"
+                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    required>
+            </div> --}}
             <div>
                 <label for="category" class="block text-sm font-medium text-gray-700">Category</label>
                 <select id="category" name="category"
