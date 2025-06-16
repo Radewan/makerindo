@@ -5,20 +5,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Logout</title>
+    <title>Dashboard</title>
+    @vite('resources/css/app.css')
 </head>
 
-<body>
-    <a href="{{ route('category.index') }}">Category</a>
-    <br>
-    <a href="{{ route('barang.index') }}">Barang</a>
-    <br>
-    <br>
-    <br>
-    <form action="{{ route('logout.post') }}" method="POST">
-        @csrf
-        <button type="submit">Logout</button>
-    </form>
+<body class="bg-gray-100 min-h-screen">
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md px-6 py-4 flex justify-between items-center">
+        <div class="text-lg font-bold text-blue-600">
+            Storage
+        </div>
+
+        <div class="space-x-4">
+            <a href="{{ route('category.index') }}" class="text-gray-700 hover:text-blue-600">Category</a>
+            <a href="{{ route('barang.index') }}" class="text-gray-700 hover:text-blue-600">Barang</a>
+        </div>
+
+        <form action="{{ route('logout.post') }}" method="POST" class="ml-4">
+            @csrf
+            <button type="submit"
+                class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition duration-200">
+                Logout
+            </button>
+        </form>
+    </nav>
+
+    <!-- Content -->
+    <div class="p-6">
+        <h1 class="text-2xl font-semibold mb-4">Selamat datang di Dashboard</h1>
+        <!-- Tambahkan konten lain di sini -->
+    </div>
+
 </body>
 
 </html>

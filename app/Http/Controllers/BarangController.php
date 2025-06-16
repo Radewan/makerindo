@@ -37,13 +37,17 @@ class BarangController extends Controller
             'nama' => 'required',
             'description' => 'required|min:8',
             'jumlah' => 'required|numeric',
+            // 'imagePath' => 'required',`
         ]);
 
         if ($validator->fails()) {
             return back()->withErrors($validator)->withInput();
         }
 
+        // $imagePath = $request->file('image')->store('images', 'public');
+
         $barang = new Barang();
+        // $barang->image_path = $imagePath;
         $barang->user_id = $request->user()->id;
         $barang->category_id = $request->category;
         $barang->nama = $request->nama;
@@ -99,6 +103,8 @@ class BarangController extends Controller
         if (!$barang) {
             return redirect()->route('barang.index');
         }
+        // $imagePath = $request->file('image')->store('images', 'public');
+        // $barang->image_path = $imagePath;
         $barang->user_id = $request->user()->id;
         $barang->category_id = $request->category;
         $barang->nama = $request->nama;

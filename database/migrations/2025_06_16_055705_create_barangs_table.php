@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id');
             $table->foreignId('category_id');
+            $table->string('image_path')->nullable();
             $table->string('nama');
             $table->text('description');
             $table->integer('jumlah');
