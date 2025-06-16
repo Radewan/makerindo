@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Edit Barang</title>
     @vite('resources/css/app.css')
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 
 <body class="bg-gray-100 min-h-screen">
@@ -76,6 +78,15 @@
     </div>
     </div>
 
+    <script>
+        @if (session('errors'))
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: '{{ session('errors')->first() }}'
+            });
+        @endif
+    </script>
 </body>
 
 </html>

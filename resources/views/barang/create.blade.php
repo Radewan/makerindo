@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Create Barang</title>
     @vite('resources/css/app.css')
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 
 <body class="bg-gray-100 min-h-screen">
@@ -43,7 +45,7 @@
             </div>
             {{-- <div>
                 <label for="image" class="block text-sm font-medium text-gray-700">Image</label>
-                <input type="text" name="image" id="image"
+                <input type="file" name="image" id="image"
                     class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                     required>
             </div> --}}
@@ -80,6 +82,15 @@
         </div>
     </div>
 
+    <script>
+        @if (session('errors'))
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: '{{ session('errors')->first() }}'
+            });
+        @endif
+    </script>
 </body>
 
 </html>

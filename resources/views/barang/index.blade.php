@@ -45,6 +45,7 @@
             <thead class="bg-gray-200">
                 <tr>
                     <th class="text-left px-4 py-2">Nama Barang</th>
+                    <th class="text-left px-4 py-2">foto Barang</th>
                     <th class="text-left px-4 py-2">Kategori</th>
                     <th class="text-left px-4 py-2">Jumlah</th>
                     <th class="text-left px-4 py-2">Show</th>
@@ -56,6 +57,8 @@
                 @foreach ($barang as $item)
                     <tr class="border-b hover:bg-gray-50">
                         <td class="px-4 py-2">{{ $item->nama }}</td>
+                        {{-- <td class="px-4 py-2"><img width="100px" src="storage/images/Acer_Wallpaper_02_3840x2400.jpg" alt="">
+                        </td> --}}
                         <td class="px-4 py-2">{{ $item->category->title }}</td>
                         <td class="px-4 py-2">{{ $item->jumlah }}</td>
                         <td class="px-4 py-2">

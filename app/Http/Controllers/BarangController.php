@@ -37,7 +37,7 @@ class BarangController extends Controller
             'nama' => 'required',
             'description' => 'required|min:8',
             'jumlah' => 'required|numeric',
-            // 'imagePath' => 'required',`
+            // 'image' => 'required|image|mimes:png,jpg,jpeg,webp,gif',
         ]);
 
         if ($validator->fails()) {
@@ -46,6 +46,7 @@ class BarangController extends Controller
 
         // $imagePath = $request->file('image')->store('images', 'public');
 
+        // dd($imagePath);
         $barang = new Barang();
         // $barang->image_path = $imagePath;
         $barang->user_id = $request->user()->id;
